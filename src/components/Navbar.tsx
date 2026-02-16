@@ -1,41 +1,49 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
-  { label: "Legal & Advisory", href: "#legal" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "Legal & Advisory", href: "/legal-advisory" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
       <div className="container flex h-16 items-center justify-between">
-        <a href="#home" className="font-serif text-2xl font-bold text-primary tracking-tight">
+        <Link to="/" className="font-serif text-2xl font-bold text-primary tracking-tight">
           Opraf Ltd
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              to={link.href}
+              className={cn(
+                "text-sm font-medium transition-colors",
+                location.pathname === link.href
+                  ? "text-primary"
+                  : "text-foreground/80 hover:text-primary"
+              )}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden md:block">
           <Button asChild>
-            <a href="#contact">Book Consultation</a>
+            <Link to="/contact">Book Consultation</Link>
           </Button>
         </div>
 
@@ -54,19 +62,24 @@ const Navbar = () => {
         <div className="md:hidden border-t border-border bg-background">
           <nav className="container flex flex-col gap-4 py-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                to={link.href}
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  location.pathname === link.href
+                    ? "text-primary"
+                    : "text-foreground/80 hover:text-primary"
+                )}
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Button asChild className="w-full">
-              <a href="#contact" onClick={() => setOpen(false)}>
+              <Link to="/contact" onClick={() => setOpen(false)}>
                 Book Consultation
-              </a>
+              </Link>
             </Button>
           </nav>
         </div>
