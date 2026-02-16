@@ -1,12 +1,10 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section
-      id="home"
-      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
-    >
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -35,10 +33,10 @@ const HeroSection = () => {
             className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 text-base px-8"
             asChild
           >
-            <a href="#projects">View Properties</a>
+            <Link to="/projects">View Properties</Link>
           </Button>
           <Button size="lg" className="text-base px-8" asChild>
-            <a href="#contact">Speak to a Lawyer</a>
+            <Link to="/legal-advisory">Speak to a Lawyer</Link>
           </Button>
         </div>
       </div>
