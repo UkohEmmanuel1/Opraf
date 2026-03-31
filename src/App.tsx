@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Index from "./pages/Index";
+import About from "./pages/About";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import LegalAdvisory from "./pages/LegalAdvisory";
