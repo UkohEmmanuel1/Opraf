@@ -14,7 +14,7 @@ const faqs = [
   {
     question: "How do I book a consultation?",
     answer:
-      "You can book a consultation by clicking the 'Book Consultation' button in the navigation bar, filling out our contact form, or calling us directly at +234 (0) 812 345 6789 during office hours.",
+      "You can book a consultation by clicking the 'Book Consultation' button in the navigation bar, filling out our contact form, or calling us directly at +234 802 672 1258 during office hours.",
   },
   {
     question: "Do you handle property disputes and litigation?",
@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "What areas of Nigeria do you operate in?",
     answer:
-      "Our headquarters is in Lekki Phase 1, Lagos. We handle projects across Lagos, Abuja, and other major cities in Nigeria. Contact us for availability in your specific location.",
+      "Our head office is at 23 Berkley Street, Onikan, Lagos Island, with a branch office at 19 Allen Avenue, Surulere. We handle projects across Lagos, Abuja, and other major cities in Nigeria.",
   },
   {
     question: "Can Opraf manage my construction project from start to finish?",
@@ -43,10 +43,10 @@ const FAQSection = () => {
     <section className="py-20 bg-background">
       <div className="container px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Find answers to the most common questions about our services.
           </p>
         </div>
@@ -54,10 +54,10 @@ const FAQSection = () => {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-serif text-base">
+                <AccordionTrigger className="text-left font-serif text-lg">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-base text-muted-foreground">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

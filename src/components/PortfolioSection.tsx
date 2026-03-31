@@ -1,4 +1,6 @@
-import { Building2, HardHat } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Building2, HardHat, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
@@ -22,13 +24,6 @@ const projects = [
     description: "Exclusive waterfront penthouses with panoramic city views.",
     status: "Available",
   },
-  {
-    title: "Abuja Central Mall",
-    category: "Construction",
-    icon: HardHat,
-    description: "35,000 sqm mixed-use retail and office development.",
-    status: "In Progress",
-  },
 ];
 
 const PortfolioSection = () => {
@@ -36,15 +31,15 @@ const PortfolioSection = () => {
     <section id="projects" className="py-20 bg-muted">
       <div className="container px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Featured Portfolio
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
             Recent construction projects and exclusive property listings.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => {
             const Icon = project.icon;
             return (
@@ -52,7 +47,6 @@ const PortfolioSection = () => {
                 key={project.title}
                 className="bg-card rounded-xl overflow-hidden border border-border hover:shadow-xl transition-shadow group"
               >
-                {/* Colored header band */}
                 <div className="h-40 bg-primary/10 flex items-center justify-center">
                   <Icon size={48} className="text-primary/40 group-hover:text-primary/60 transition-colors" />
                 </div>
@@ -63,12 +57,20 @@ const PortfolioSection = () => {
                     </span>
                     <span className="text-xs text-muted-foreground">{project.category}</span>
                   </div>
-                  <h3 className="font-semibold text-foreground mb-1 font-serif">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground">{project.description}</p>
+                  <h3 className="font-semibold text-lg text-foreground mb-1 font-serif">{project.title}</h3>
+                  <p className="text-base text-muted-foreground">{project.description}</p>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        <div className="text-center mt-10">
+          <Button asChild variant="outline" size="lg" className="gap-2">
+            <Link to="/projects">
+              View All Projects <ArrowRight size={18} />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
