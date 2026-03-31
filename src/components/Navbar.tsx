@@ -5,11 +5,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Legal & Advisory", href: "/legal-advisory" },
-  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
