@@ -17,7 +17,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="font-serif text-2xl font-bold text-primary tracking-tight">
           Opraf Ltd
@@ -30,7 +30,7 @@ const Navbar = () => {
               key={link.href}
               to={link.href}
               className={cn(
-                "text-sm font-medium transition-colors",
+                "text-base font-medium transition-colors",
                 location.pathname === link.href
                   ? "text-primary"
                   : "text-foreground/80 hover:text-primary"
@@ -59,14 +59,14 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-border bg-background">
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
           <nav className="container flex flex-col gap-4 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors",
+                  "text-base font-medium transition-colors",
                   location.pathname === link.href
                     ? "text-primary"
                     : "text-foreground/80 hover:text-primary"
