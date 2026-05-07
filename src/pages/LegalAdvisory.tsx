@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { Scale, FileText, FileCheck, Search, LineChart, ShieldCheck, Gavel, BookOpen } from "lucide-react";
+// Recommended: Rename file to remove the space for safer production builds
+import LegalImage from "@/assets/Ebute.png";
 
 const legalServices = [
   { icon: FileText, title: "Property Law", desc: "Expert legal counsel on all property matters including purchase agreements, lease contracts, and property rights." },
@@ -22,17 +24,30 @@ const LegalAdvisory = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        <section className="py-20 bg-primary">
-          <div className="container px-4 text-center">
-            <h1 className="text-5xl sm:text-6xl font-bold text-primary-foreground mb-4 font-serif">
+        {/* Premium Dark Hero Section */}
+        <section className="relative py-24 overflow-hidden">
+          {/* Background Image Layer */}
+          <div 
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
+            style={{ backgroundImage: `url(${LegalImage})` }}
+          />
+          
+          {/* The Red Overlay */}
+          <div className="absolute inset-0 z-10 bg-red-950/85 mix-blend-multiply" />
+
+          {/* Content Layer */}
+          <div className="container relative z-20 px-4 text-center">
+            <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6 font-serif tracking-tight">
               Legal & Advisory
             </h1>
-            <p className="text-primary-foreground/80 max-w-2xl mx-auto text-xl">
+            <div className="w-24 h-1 bg-red-500 mx-auto mb-6" />
+            <p className="text-white/90 max-w-2xl mx-auto text-xl leading-relaxed">
               Protecting your assets with sound legal expertise and strategic business advisory.
             </p>
           </div>
         </section>
 
+        {/* Legal Services Section */}
         <section className="py-20 bg-background">
           <div className="container px-4">
             <h2 className="text-4xl font-bold text-foreground mb-2 font-serif">Legal Services</h2>
@@ -54,6 +69,7 @@ const LegalAdvisory = () => {
           </div>
         </section>
 
+        {/* Business Advisory Section */}
         <section className="py-20 bg-muted">
           <div className="container px-4">
             <h2 className="text-4xl font-bold text-foreground mb-2 font-serif">Business Advisory</h2>

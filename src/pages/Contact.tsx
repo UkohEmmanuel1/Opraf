@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import FAQSection from "@/components/FAQSection";
 
 const Contact = () => {
   return (
@@ -104,6 +105,7 @@ const Contact = () => {
           </div>
         </section>
       </main>
+      <FAQSection />
       <Footer />
     </div>
   );

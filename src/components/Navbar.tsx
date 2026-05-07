@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "About", href: "/about" },
@@ -19,7 +20,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="font-serif text-2xl font-bold text-primary tracking-tight">
-          Opraf Ltd
+          <img src={Logo} alt="Logo" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Nav */}

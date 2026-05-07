@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import ServicesImage from "@/assets/Allen_3.jpeg";
 import {
   Building2, HardHat, Scale, TrendingUp,
   Home, KeyRound, BarChart3,
@@ -71,16 +72,26 @@ const Services = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        <section className="py-20 bg-primary">
-          <div className="container px-4 text-center">
-            <h1 className="text-5xl sm:text-6xl font-bold text-primary-foreground mb-4 font-serif">
-              Our Services
-            </h1>
-            <p className="text-primary-foreground/80 max-w-2xl mx-auto text-xl">
-              A comprehensive suite of real estate, construction, legal, and advisory services — all under one roof.
-            </p>
-          </div>
-        </section>
+        <section className="relative py-20 overflow-hidden">
+  {/* Background Image */}
+  <div 
+    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: `url(${ServicesImage})` }}
+  />
+  
+  {/* Red Overlay - Using bg-red-950 for a deep, professional look */}
+  <div className="absolute inset-0 z-10 bg-red-950/80 mix-blend-multiply" />
+
+  {/* Content */}
+  <div className="container relative z-20 px-4 text-center">
+    <h1 className="text-5xl sm:text-6xl font-bold text-white mb-4 font-serif">
+      Our Services
+    </h1>
+    <p className="text-white/90 max-w-2xl mx-auto text-xl">
+      A comprehensive suite of real estate, construction, legal, and advisory services — all under one roof.
+    </p>
+  </div>
+</section>
 
         <section className="py-20 bg-background">
           <div className="container px-4">
