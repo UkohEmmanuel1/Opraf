@@ -3,6 +3,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import FAQSection from "@/components/FAQSection";
+import ContactImage from "@/assets/Opraf_4.png";
 
 const Contact = () => {
   return (
