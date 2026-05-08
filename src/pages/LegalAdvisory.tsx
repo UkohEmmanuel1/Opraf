@@ -2,8 +2,7 @@ import Navbar from "@/components/Navbar";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { Scale, FileText, FileCheck, Search, LineChart, ShieldCheck, Gavel, BookOpen } from "lucide-react";
-// Recommended: Rename file to remove the space for safer production builds
-import LegalImage from "@/assets/Ebute.png";
+import LegalImage from "@/assets/OprafHero_1.png";
 
 const legalServices = [
   { icon: FileText, title: "Property Law", desc: "Expert legal counsel on all property matters including purchase agreements, lease contracts, and property rights." },

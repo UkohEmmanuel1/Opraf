@@ -20,11 +20,11 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="font-serif text-2xl font-bold text-primary tracking-tight">
-          <img src={Logo} alt="Logo" className="h-12 w-auto" />
+          <img src={Logo} alt="Logo" className="h-32 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-left gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}

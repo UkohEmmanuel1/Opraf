@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
-
+import FooterLogo from "@/assets/2.png"
 const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground py-12">
@@ -8,7 +8,8 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="font-serif text-xl font-bold mb-3">Opraf Ltd</h3>
+            <h3 className="font-serif text-xl font-bold mb-3">
+              <img src={FooterLogo} alt="footerlogo" className="h-28 w-auto" /> </h3>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed">
               A holistic Real Estate Consultancy delivering excellence in Property Law, Construction, and Business Advisory.
             </p>

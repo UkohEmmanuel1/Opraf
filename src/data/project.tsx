@@ -8,7 +8,7 @@ export const projects: Project[] = [
     title: "The Meridian Residences",
     location: "Victoria Island, Lagos",
     summary: "A 42-unit luxury residential development setting new standards for urban living.",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80",
+    image: "@/assets/Ayilara_1.jpeg",
     content: `
       The Meridian Residences stands as a testament to architectural excellence in the heart of Victoria Island. 
       This 42-unit luxury development was designed with the modern professional in mind, blending 

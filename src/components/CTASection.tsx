@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/Ayilara_2.jpeg";
 
 const CTASection = () => {
   return (
@@ -21,7 +21,7 @@ const CTASection = () => {
           Ready to Get Started?
         </h2>
         <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-          Whether you need legal counsel, property management, or construction expertise — we're here to help you every step of the way.
+          Whether you need legal counsel, property management, or construction expertise we're here to help you every step of the way.
         </p>
         <Button
           size="lg"

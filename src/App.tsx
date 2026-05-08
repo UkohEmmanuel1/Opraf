@@ -7,11 +7,12 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 // Imports
+import WhatsAppOverlay from "@/components/whatsapp";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
-import ProjectDetail from "./pages/ProjectDetail"; // 🚨 1. Add this import!
+import ProjectDetail from "./pages/ProjectDetail"; 
 import LegalAdvisory from "./pages/LegalAdvisory";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -50,6 +51,9 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+
+         {/* WhatsApp Floating Overlay */}
+        <WhatsAppOverlay />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -122,7 +122,7 @@ const About = () => {
               Who We Are
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="grid gap-10 items-center">
               {/* Text Side */}
               <div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -143,14 +143,7 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Image Side */}
-              <div className="relative">
-                <img
-                  src={AboutImage}
-                  alt="Opraf Limited Office"
-                  className="w-full h-[420px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition-transform duration-300"
-                />
-              </div>
+              
             </div>
           </div>
         </section>
