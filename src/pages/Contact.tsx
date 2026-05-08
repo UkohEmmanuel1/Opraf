@@ -9,16 +9,27 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        <section className="py-20 bg-primary">
-          <div className="container px-4 text-center">
-            <h1 className="text-5xl sm:text-6xl font-bold text-primary-foreground mb-4 font-serif">
-              Contact Us
-            </h1>
-            <p className="text-primary-foreground/80 max-w-2xl mx-auto text-xl">
-              Ready to start your next project? Get in touch with our team today.
-            </p>
-          </div>
-        </section>
+        <section className="relative py-24 overflow-hidden">
+  {/* Background Image Layer */}
+  <div 
+    className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
+    style={{ backgroundImage: `url(${ContactImage})` }}
+  />
+  
+  {/* The Red Overlay - Maintaining the dark, premium feel */}
+  <div className="absolute inset-0 z-10 bg-red-950/85 mix-blend-multiply" />
+
+  {/* Content Layer */}
+  <div className="container relative z-20 px-4 text-center">
+    <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6 font-serif tracking-tight">
+      Contact Us
+    </h1>
+    <div className="w-24 h-1 bg-red-500 mx-auto mb-6" /> {/* Accent line for consistency */}
+    <p className="text-white/90 max-w-2xl mx-auto text-xl leading-relaxed">
+      Ready to start your next project? Get in touch with our team today.
+    </p>
+  </div>
+</section>
 
         {/* Contact info + form */}
         <section className="py-20 bg-background">
