@@ -5,10 +5,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
+// Imports
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail"; // 🚨 1. Add this import!
 import LegalAdvisory from "./pages/LegalAdvisory";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -34,7 +37,15 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          
+          {/* Projects Listing Page */}
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          
+          
+          {/* 🚨 2. Add this dynamic route for individual articles! */}
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          
           <Route path="/legal-advisory" element={<LegalAdvisory />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

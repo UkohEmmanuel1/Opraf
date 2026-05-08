@@ -26,7 +26,7 @@ const CTASection = () => {
         <Button
           size="lg"
           variant="outline"
-          className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 text-base"
+          className="border-primary-foreground text-primary hover:bg-primary-foreground/10 hover:text-primary text-base"
           asChild
         >
           <Link to="/contact">Contact Us Today</Link>
