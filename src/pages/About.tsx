@@ -16,7 +16,6 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import AboutImage from "@/assets/Allen_2.jpeg";
 
-
 const values = [
   {
     icon: Award,
@@ -89,7 +88,6 @@ const About = () => {
       <Navbar />
       <main>
         {/* Hero */}
-
         <section className="relative py-24 overflow-hidden">
           {/* Background Image Layer */}
           <div
@@ -115,7 +113,6 @@ const About = () => {
         </section>
 
         {/* Who We Are */}
-        {/* Who We Are */}
         <section className="py-20 bg-background">
           <div className="container px-4 max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-10 font-serif text-center">
@@ -124,7 +121,7 @@ const About = () => {
 
             <div className="grid gap-10 items-center">
               {/* Text Side */}
-              <div>
+              <div className="max-w-4xl mx-auto text-center">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   Opraf Limited is a Lagos-based real estate consultancy that
                   brings together expertise in property law, construction
@@ -142,25 +139,24 @@ const About = () => {
                   expectations.
                 </p>
               </div>
-
-              
             </div>
           </div>
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-20 bg-muted">
+        <section className="py-24 bg-muted">
           <div className="container px-4">
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="border-none shadow-lg">
-                <CardContent className="p-8 text-center">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Target size={28} className="text-primary" />
+            {/* Increased max-width and gap for better side balance */}
+            <div className="grid md:grid-cols-2 gap-10 lg:gap-16 max-w-6xl mx-auto">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-10 text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <Target size={32} className="text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3 font-serif">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 font-serif">
                     Our Mission
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-lg">
                     To provide comprehensive, transparent, and client-focused
                     real estate solutions that empower individuals and
                     businesses to make informed property decisions with
@@ -168,15 +164,16 @@ const About = () => {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="border-none shadow-lg">
-                <CardContent className="p-8 text-center">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Eye size={28} className="text-primary" />
+
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-10 text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <Eye size={32} className="text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3 font-serif">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 font-serif">
                     Our Vision
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-lg">
                     To be Nigeria's most trusted and innovative real estate
                     consultancy, setting the standard for integrated property
                     services across West Africa.
@@ -188,47 +185,51 @@ const About = () => {
         </section>
 
         {/* Core Values */}
-        <section className="py-20 bg-background">
+        <section className="py-24 bg-background">
           <div className="container px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-12 font-serif text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-14 font-serif text-center">
               Our Core Values
             </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {/* Widened max-w to 7xl to spread out the 4 columns beautifully */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 max-w-7xl mx-auto">
               {values.map((value) => (
-                <div key={value.title} className="text-center p-6">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <value.icon size={24} className="text-primary" />
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2 font-serif">
-                    {value.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
+                <Card key={value.title} className="border-none shadow-md hover:shadow-lg transition-shadow">
+                  <CardContent className="p-8 text-center h-full flex flex-col justify-center">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                      <value.icon size={28} className="text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-3 font-serif">
+                      {value.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {value.description}
+                    </p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
         </section>
 
         {/* What We Do (Pillars) */}
-        <section className="py-20 bg-muted">
+        <section className="py-24 bg-muted">
           <div className="container px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-12 font-serif text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-14 font-serif text-center">
               What We Do
             </h2>
-            <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Increased max-width and gaps */}
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
               {pillars.map((pillar) => (
-                <Card key={pillar.title} className="border-none shadow-md">
-                  <CardContent className="p-6 flex gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <pillar.icon size={24} className="text-primary" />
+                <Card key={pillar.title} className="border-none shadow-md hover:shadow-lg transition-shadow">
+                  <CardContent className="p-8 flex gap-6 items-start">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <pillar.icon size={28} className="text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-foreground mb-1 font-serif">
+                      <h3 className="text-xl font-bold text-foreground mb-2 font-serif">
                         {pillar.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-muted-foreground leading-relaxed text-base">
                         {pillar.description}
                       </p>
                     </div>
@@ -240,25 +241,25 @@ const About = () => {
         </section>
 
         {/* Timeline */}
-        <section className="py-20 bg-background">
+        <section className="py-24 bg-background">
           <div className="container px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-12 font-serif text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-16 font-serif text-center">
               Our Journey
             </h2>
             <div className="max-w-2xl mx-auto space-y-0">
               {milestones.map((m, i) => (
-                <div key={m.year} className="flex gap-4">
+                <div key={m.year} className="flex gap-6">
                   <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-xs font-bold flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-sm font-bold flex-shrink-0 shadow-md">
                       {m.year.slice(2)}
                     </div>
                     {i < milestones.length - 1 && (
-                      <div className="w-0.5 h-full bg-border min-h-[2rem]" />
+                      <div className="w-0.5 h-full bg-border min-h-[3rem] my-2" />
                     )}
                   </div>
-                  <div className="pb-8">
-                    <p className="font-bold text-foreground">{m.year}</p>
-                    <p className="text-muted-foreground">{m.event}</p>
+                  <div className="pb-10 pt-2">
+                    <p className="text-xl font-bold text-foreground mb-1 font-serif">{m.year}</p>
+                    <p className="text-muted-foreground text-lg">{m.event}</p>
                   </div>
                 </div>
               ))}

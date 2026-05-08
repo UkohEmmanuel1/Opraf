@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppOverlay = () => {
-  const phoneNumber = "2348012345678"; 
+  const phoneNumber = "2348026721258"; 
   const message = encodeURIComponent(
     "Hello, I would like to make an enquiry."
   );

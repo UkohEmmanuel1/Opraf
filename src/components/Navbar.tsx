@@ -19,29 +19,30 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container flex h-16 items-center justify-between">
+        {/* Logo - Stays on the left */}
         <Link to="/" className="font-serif text-2xl font-bold text-primary tracking-tight">
           <img src={Logo} alt="Logo" className="h-32 w-auto" />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-left gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={cn(
-                "text-base font-medium transition-colors",
-                location.pathname === link.href
-                  ? "text-primary"
-                  : "text-foreground/80 hover:text-primary"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        {/* Right side container: Groups Nav and CTA together */}
+        <div className="hidden md:flex items-center gap-10">
+          <nav className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={cn(
+                  "text-base font-medium transition-colors",
+                  location.pathname === link.href
+                    ? "text-primary"
+                    : "text-foreground/80 hover:text-primary"
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        <div className="hidden md:block">
           <Button asChild>
             <Link to="/contact">Book Consultation</Link>
           </Button>
