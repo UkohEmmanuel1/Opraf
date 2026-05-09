@@ -27,7 +27,7 @@ export const projects: Project[] = [
     title: "Lekki Commercial Hub",
     location: "Lekki Phase 1, Lagos",
     summary: "Grade-A office spaces designed for innovation and corporate excellence.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+    image: "@/assets/lekki_hub.jpeg",
     content: `
       Strategic positioning is everything in business. The Lekki Commercial Hub offers 
       world-class Grade-A office spaces at the gateway of Lekki Phase 1. Designed to 
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     title: "Ikoyi Penthouse Collection",
     location: "Ikoyi, Lagos",
     summary: "Exclusive waterfront penthouses offering unparalleled privacy and panoramic views.",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80",
+    image: "@/assets/ikoyi_penthouse.jpeg",
     content: `
       Experience the peak of luxury with the Ikoyi Penthouse Collection. These 
       limited-edition waterfront residences offer a lifestyle of quiet sophistication. 
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     title: "Abuja Central Mall",
     location: "Central Business District, Abuja",
     summary: "A 35,000 sqm mixed-use development destined to be the capital's premier destination.",
-    image: "https://images.unsplash.com/photo-1555636222-cae831e670b3?auto=format&fit=crop&w=1600&q=80",
+    image: "@/assets/abuja_mall.jpeg",
     content: `
       Currently under construction, the Abuja Central Mall is set to redefine the 
       retail landscape of the nation's capital. Spanning 35,000 sqm, this mixed-use 
