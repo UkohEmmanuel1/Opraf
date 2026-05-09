@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import ServicesImage from "@/assets/Allen_3.jpeg";
+import ServicesImage from "@/assets/Opraf_3.png";
 import {
   Building2, HardHat, Scale, TrendingUp,
   Home, KeyRound, BarChart3,
@@ -88,7 +88,7 @@ const Services = () => {
       Our Services
     </h1>
     <p className="text-white/90 max-w-2xl mx-auto text-xl">
-      A comprehensive suite of real estate, construction, legal, and advisory services — all under one roof.
+      A comprehensive suite of real estate, construction, legal, and advisory services  all under one roof.
     </p>
   </div>
 </section>
