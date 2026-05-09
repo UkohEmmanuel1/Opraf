@@ -27,7 +27,7 @@ export const projects: Project[] = [
     title: "Lekki Commercial Hub",
     location: "Lekki Phase 1, Lagos",
     summary: "Grade-A office spaces designed for innovation and corporate excellence.",
-    image: "@/assets/lekki_hub.jpeg",
+    image: "@/assets/ayilara_2.jpeg",
     content: `
       Strategic positioning is everything in business. The Lekki Commercial Hub offers 
       world-class Grade-A office spaces at the gateway of Lekki Phase 1. Designed to 
