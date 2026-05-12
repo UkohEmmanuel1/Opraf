@@ -52,20 +52,29 @@ const HeroSection = () => {
       ))}
 
       {/* Hero Content (Text, Buttons) */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">
-          Building Wealth, Protecting Assets, Managing Futures
+      <div className="relative z-10 container text-center px-4 py-20">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-slide-up font-serif">
+          Building Wealth, Protecting Assets,
+          <br className="hidden sm:block" /> Managing Futures.
         </h1>
-        <p className="text-lg md:text-2xl mb-8 max-w-2xl drop-shadow-md">
-          Your all in one partner for Real Estate Brokerage, Property Law, Construction, and Business Advisory
+        <p className="max-w-2xl mx-auto text-xl sm:text-2xl text-primary-foreground/80 mb-10 animate-fade-in font-sans" style={{ animationDelay: "0.2s" }}>
+          Your all-in-one partner for Real Estate Brokerage, Property Law,
+          Construction, and Business Advisory.
         </p>
-        
-        {/* If you are using standard HTML buttons instead of the UI component: */}
-        <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 transition-colors text-white text-lg font-semibold rounded-md shadow-lg">
-          View Projects
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-primary-foreground text-primary bg-primary-foreground hover:bg-primary-foreground/90 text-base w-auto"
+            asChild
+          >
+            <Link to="/projects">View Properties</Link>
+          </Button>
+          <Button size="lg" className="text-base w-auto" asChild>
+            <Link to="/legal-advisory">Speak to a Lawyer</Link>
+          </Button>
+        </div>
       </div>
-      
     </section>
   );
 };
