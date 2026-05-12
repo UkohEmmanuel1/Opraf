@@ -3,7 +3,7 @@ import App from "./App.tsx";
 import "./index.css";
 
 // Import favicon
-import favicon from "./assets/favicon.png";
+import favicon from "@/assets/favicon.png";
 
 // Set favicon dynamically
 const link =
