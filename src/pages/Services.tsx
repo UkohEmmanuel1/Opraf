@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import ServicesImage from "@/assets/Opraf_3.png";
+import ServicesImage from "@/assets/Allen_3.jpeg";
 import {
   Building2, HardHat, Scale, TrendingUp,
   Home, KeyRound, BarChart3,

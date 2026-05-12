@@ -54,20 +54,7 @@ const HeroSection = () => {
           View Projects
         </button>
       </div>
-
-      {/* Navigation Dots (Optional) */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-3 z-10">
-        {backgroundImages.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              currentIndex === index ? "bg-white" : "bg-white/50 hover:bg-white/80"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
+      
     </section>
   );
 };

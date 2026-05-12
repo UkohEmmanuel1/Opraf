@@ -13,7 +13,7 @@ const CTASection = () => {
           className="w-full h-full object-cover opacity-20"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-primary/95" />
+        <div className="absolute inset-0 bg-primary" />
       </div>
 
       <div className="relative z-10 container px-4 text-center">

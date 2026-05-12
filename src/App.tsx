@@ -8,14 +8,14 @@ import { useLocation } from "react-router-dom";
 
 // Imports
 import WhatsAppOverlay from "@/components/whatsapp";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Projects from "./pages/Projects";
-import ProjectDetail from "./pages/ProjectDetail"; 
-import LegalAdvisory from "./pages/LegalAdvisory";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+import Index from "@/pages/Index";
+import About from "@/pages/About";
+import Services from "@/pages/Services";
+import Projects from "@/pages/Projects";
+import ProjectDetail from "@/pages/ProjectDetail"; 
+import LegalAdvisory from "@/pages/LegalAdvisory";
+//import Contact from "@/pages/Contact";
+import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -48,7 +48,8 @@ const App = () => (
           <Route path="/projects/:id" element={<ProjectDetail />} />
           
           <Route path="/legal-advisory" element={<LegalAdvisory />} />
-          <Route path="/contact" element={<Contact />} />
+          {/*<Route path="/contact" element={<Contact />} /> */}
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
 
