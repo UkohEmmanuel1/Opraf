@@ -1,10 +1,10 @@
 import { Project } from '@/types/project'; // Adjust path if needed
 
 // 1. Import the images directly
-import meridianImage from '@/assets/Ayilara_1.jpeg';
-import lekkiImage from '@/assets/Ayilara_2.jpeg';
-import ikoyiImage from '@/assets/Allen_3.jpeg';
-import abujaImage from '@/assets/Allen_4.jpeg';
+import meridianImage from '@/assets/Allen_4.jpeg';
+import lekkiImage from '@/assets/Ayilara_3.jpeg';
+import ikoyiImage from '@/assets/ebuta_meta.jpeg';
+import abujaImage from '@/assets/Renovation banire 0.jpeg';
 
 
 

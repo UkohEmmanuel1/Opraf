@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Logo from "@/assets/logo.png";
 
 const navLinks = [
+  { label: "Home", href: "/home" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },

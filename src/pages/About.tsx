@@ -119,7 +119,7 @@ const About = () => {
               Who We Are
             </h2>
 
-            <div className="grid gap-10 items-center">
+            <div className="grid gap-14 items-center">
               {/* Text Side */}
               <div className="max-w-4xl mx-auto text-center">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -218,7 +218,7 @@ const About = () => {
               What We Do
             </h2>
             {/* Increased max-width and gaps */}
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-14 lg:gap-12 max-w-6xl mx-auto">
               {pillars.map((pillar) => (
                 <Card key={pillar.title} className="border-none shadow-md hover:shadow-lg transition-shadow">
                   <CardContent className="p-8 flex gap-6 items-start">
