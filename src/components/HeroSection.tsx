@@ -1,13 +1,18 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/OprafHero.png";
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+// Ensure you have this component, or replace it with a standard <button> if you don't use shadcn
+import { Button } from "@/components/ui/button"; 
 
-// Replace these paths with your actual asset names
+// 1. IMPORT the images so Vite knows to bundle them properly
+import heroBg1 from "@/assets/OprafHero.png";
+import heroBg2 from "@/assets/Opraf_2.png";
+import heroBg3 from "@/assets/Opraf_4.png";
+
+// 2. Put the imported variables into the array
 const backgroundImages = [
-  "@/assets/OprafHero.png",
-  "@/assets/Opraf_2.png",
-  "@/assets/Opraf_4.png",
+  heroBg1,
+  heroBg2,
+  heroBg3,
 ];
 
 const HeroSection = () => {
@@ -26,31 +31,37 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black">
+      
       {/* Sliding Background Images */}
       {backgroundImages.map((image, index) => (
         <div
           key={index}
-          className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out"
-          style={{
-            backgroundImage: `url(${image})`,
-            // If it's the current index, make it fully visible, otherwise hide it
-            opacity: currentIndex === index ? 1 : 0,
-          }}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+            currentIndex === index ? "opacity-100 z-0" : "opacity-0 -z-10"
+          }`}
         >
-          {/* Optional Overlay to make text more readable */}
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          {/* Using an img tag instead of CSS background-image prevents Vite 404 errors */}
+          <img 
+            src={image} 
+            alt={`Hero Background ${index + 1}`} 
+            className="w-full h-full object-cover"
+          />
+          {/* Dark Overlay to make the text pop */}
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
       ))}
 
       {/* Hero Content (Text, Buttons) */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
         <h1 className="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">
-          Building the Future
+          Building Wealth, Protecting Assets, Managing Futures
         </h1>
         <p className="text-lg md:text-2xl mb-8 max-w-2xl drop-shadow-md">
-          Discover luxury residences and premium commercial spaces in the heart of Nigeria.
+          Your all in one partner for Real Estate Brokerage, Property Law, Construction, and Business Advisory
         </p>
-        <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 transition-colors text-white text-lg font-semibold rounded-md">
+        
+        {/* If you are using standard HTML buttons instead of the UI component: */}
+        <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 transition-colors text-white text-lg font-semibold rounded-md shadow-lg">
           View Projects
         </button>
       </div>

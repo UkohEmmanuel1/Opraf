@@ -1,5 +1,14 @@
-import { Project } from '../types/project';
+import { Project } from '@/types/project'; // Adjust path if needed
 
+// 1. Import the images directly
+import meridianImage from '@/assets/Ayilara_1.jpeg';
+import lekkiImage from '@/assets/Ayilara_2.jpeg';
+import ikoyiImage from '@/assets/Allen_3.jpeg';
+import abujaImage from '@/assets/Allen_4.jpeg';
+
+
+
+// 2. Use the imported variables in the array
 export const projects: Project[] = [
   {
     id: "the-meridian-residences",
@@ -8,7 +17,7 @@ export const projects: Project[] = [
     title: "The Meridian Residences",
     location: "Victoria Island, Lagos",
     summary: "A 42-unit luxury residential development setting new standards for urban living.",
-    image: "@/assets/Ayilara_1.jpeg",
+    image: meridianImage, 
     content: `
       The Meridian Residences stands as a testament to architectural excellence in the heart of Victoria Island. 
       This 42-unit luxury development was designed with the modern professional in mind, blending 
@@ -27,7 +36,7 @@ export const projects: Project[] = [
     title: "Lekki Commercial Hub",
     location: "Lekki Phase 1, Lagos",
     summary: "Grade-A office spaces designed for innovation and corporate excellence.",
-    image: "@/assets/ayilara_2.jpeg",
+    image: lekkiImage,
     content: `
       Strategic positioning is everything in business. The Lekki Commercial Hub offers 
       world-class Grade-A office spaces at the gateway of Lekki Phase 1. Designed to 
@@ -46,7 +55,7 @@ export const projects: Project[] = [
     title: "Ikoyi Penthouse Collection",
     location: "Ikoyi, Lagos",
     summary: "Exclusive waterfront penthouses offering unparalleled privacy and panoramic views.",
-    image: "@/assets/ikoyi_penthouse.jpeg",
+    image: ikoyiImage,
     content: `
       Experience the peak of luxury with the Ikoyi Penthouse Collection. These 
       limited-edition waterfront residences offer a lifestyle of quiet sophistication. 
@@ -65,7 +74,7 @@ export const projects: Project[] = [
     title: "Abuja Central Mall",
     location: "Central Business District, Abuja",
     summary: "A 35,000 sqm mixed-use development destined to be the capital's premier destination.",
-    image: "@/assets/abuja_mall.jpeg",
+    image: abujaImage,
     content: `
       Currently under construction, the Abuja Central Mall is set to redefine the 
       retail landscape of the nation's capital. Spanning 35,000 sqm, this mixed-use 
