@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button"; 
 
 // 1. IMPORT images
-import heroBg1 from "@/assets/OprafHero.png";
+import heroBg1 from "@/assets/Opraf_Hero.png";
 import heroBg2 from "@/assets/OprafHero_1.png";
 import heroBg3 from "@/assets/Opraf_Hero.png";
 
