@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button"; 
 
 // 1. IMPORT images
-import heroBg1 from "@/assets/Opraf_Hero.png";
-import heroBg2 from "@/assets/OprafHero_1.png";
-import heroBg3 from "@/assets/Opraf_Hero.png";
+import heroBg1 from "@/assets/Opraf-hero.png";
+import heroBg2 from "@/assets/Opraf-hero_1.png";
+import heroBg3 from "@/assets/Opraf-hero_2.png";
 
 const backgroundImages = [heroBg1, heroBg2, heroBg3];
 
