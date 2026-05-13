@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 
 // 1. IMPORT images
 import heroBg1 from "@/assets/OprafHero.png";
-import heroBg2 from "@/assets/Allen_4.jpeg";
-import heroBg3 from "@/assets/Ayilara_3.jpeg";
+import heroBg2 from "@/assets/OprafHero_0.png";
+import heroBg3 from "@/assets/Opraf_Hero.png";
 
 const backgroundImages = [heroBg1, heroBg2, heroBg3];
 
