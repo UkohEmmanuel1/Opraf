@@ -1,79 +1,91 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-// Ensure you have this component, or replace it with a standard <button> if you don't use shadcn
 import { Button } from "@/components/ui/button"; 
 
-// 1. IMPORT the images so Vite knows to bundle them properly
+// 1. IMPORT images
 import heroBg1 from "@/assets/OprafHero.png";
 import heroBg2 from "@/assets/Allen_4.jpeg";
 import heroBg3 from "@/assets/Ayilara_3.jpeg";
 
-// 2. Put the imported variables into the array
-const backgroundImages = [
-  heroBg1,
-  heroBg2,
-  heroBg3,
-];
+const backgroundImages = [heroBg1, heroBg2, heroBg3];
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Automatically slide every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000); // 5000ms = 5 seconds
+      setCurrentIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 6000); // Slightly longer duration for a calmer feel
 
-    return () => clearInterval(timer); // Cleanup timer on unmount
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black">
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
       
       {/* Sliding Background Images */}
       {backgroundImages.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-            currentIndex === index ? "opacity-100 z-0" : "opacity-0 -z-10"
+          className={`absolute inset-0 w-full h-full transition-opacity duration-[1500ms] ease-in-out ${
+            currentIndex === index ? "opacity-100 scale-105" : "opacity-0 scale-100"
           }`}
+          style={{ transitionProperty: "opacity, transform" }}
         >
-          {/* Using an img tag instead of CSS background-image prevents Vite 404 errors */}
           <img 
             src={image} 
             alt={`Hero Background ${index + 1}`} 
             className="w-full h-full object-cover"
           />
-          {/* Dark Overlay to make the text pop */}
-          <div className="absolute inset-0 bg-black/40"></div>
+          {/* Enhanced Gradient Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60"></div>
         </div>
       ))}
 
-      {/* Hero Content (Text, Buttons) */}
-      <div className="relative z-10 container text-center px-4 py-20">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-slide-up font-serif">
-          Building Wealth, Protecting Assets,
-          <br className="hidden sm:block" /> Managing Futures.
+      {/* Hero Content */}
+      <div className="relative z-10 container px-4 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 font-serif">
+          Building Wealth, <span className="text-primary-foreground/90">Protecting Assets,</span>
+          <br className="hidden md:block" /> Managing Futures.
         </h1>
-        <p className="max-w-2xl mx-auto text-xl sm:text-2xl text-primary-foreground/80 mb-10 animate-fade-in font-sans" style={{ animationDelay: "0.2s" }}>
+        
+        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-white/80 mb-10 animate-in fade-in slide-in-from-bottom-10 delay-300 duration-1000 font-sans">
           Your all-in-one partner for Real Estate Brokerage, Property Law,
           Construction, and Business Advisory.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-12 delay-500 duration-1000">
           <Button
-            variant="outline"
+            variant="default"
             size="lg"
-            className="border-primary-foreground text-primary bg-primary-foreground hover:bg-primary-foreground/90 text-base w-auto"
+            className="px-8 py-6 text-lg min-w-[200px]"
             asChild
           >
             <Link to="/projects">View Properties</Link>
           </Button>
-          <Button size="lg" className="text-base w-auto" asChild>
+          
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="px-8 py-6 text-lg min-w-[200px] border-white  hover:bg-white hover:text-black transition-colors"
+            asChild
+          >
             <Link to="/legal-advisory">Speak to a Lawyer</Link>
           </Button>
         </div>
+      </div>
+
+      {/* Slide Indicators (Optional but recommended for UX) */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {backgroundImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentIndex(i)}
+            className={`h-1.5 transition-all duration-500 rounded-full ${
+              currentIndex === i ? "w-8 bg-white" : "w-2 bg-white/40"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );
