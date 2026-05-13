@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button"; 
 
 // 1. IMPORT images
-import heroBg1 from "@/assets/OprafHero.png";
-import heroBg2 from "@/assets/OprafHero_0.png";
-import heroBg3 from "@/assets/Opraf_Hero.png";
+import heroBg1 from "@/assets/Opraf_Hero.png";
+import heroBg2 from "@/assets/OprafHero.png";
+import heroBg3 from "@/assets/OprafHero_1.png";
 
 const backgroundImages = [heroBg1, heroBg2, heroBg3];
 
@@ -21,7 +21,8 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
+    // Changed h-screen to min-h-[100dvh] to fix mobile browser URL bar clipping
+    <section className="relative w-full min-h-[100dvh] flex items-center justify-center overflow-hidden bg-black">
       
       {/* Sliding Background Images */}
       {backgroundImages.map((image, index) => (
@@ -38,27 +39,30 @@ const HeroSection = () => {
             className="w-full h-full object-cover"
           />
           {/* Enhanced Gradient Overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
         </div>
       ))}
 
       {/* Hero Content */}
-      <div className="relative z-10 container px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 font-serif">
-          Building Wealth, <span className="text-primary-foreground/90">Protecting Assets,</span>
+      <div className="relative z-10 container px-6 sm:px-8 text-center mt-12 sm:mt-0">
+        {/* Scaled down base text-size for better mobile wrapping */}
+        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.2] sm:leading-[1.1] mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 font-serif">
+          Building Wealth, <span className="text-primary-foreground/90 block sm:inline mt-2 sm:mt-0">Protecting Assets,</span>
           <br className="hidden md:block" /> Managing Futures.
         </h1>
         
-        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-white/80 mb-10 animate-in fade-in slide-in-from-bottom-10 delay-300 duration-1000 font-sans">
+        {/* Adjusted text base size and margins for mobile */}
+        <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white/80 mb-8 sm:mb-10 px-2 sm:px-0 animate-in fade-in slide-in-from-bottom-10 delay-300 duration-1000 font-sans">
           Your all-in-one partner for Real Estate Brokerage, Property Law,
           Construction, and Business Advisory.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-12 delay-500 duration-1000">
+        {/* Made buttons take full width on mobile for better touch targets */}
+        <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-3 sm:gap-4 justify-center items-center animate-in fade-in slide-in-from-bottom-12 delay-500 duration-1000 px-4 sm:px-0">
           <Button
             variant="default"
             size="lg"
-            className="px-8 py-6 text-lg min-w-[200px]"
+            className="w-full sm:w-auto px-8 py-6 text-base sm:text-lg min-w-[200px]"
             asChild
           >
             <Link to="/projects">View Properties</Link>
@@ -67,7 +71,7 @@ const HeroSection = () => {
           <Button 
             variant="outline" 
             size="lg" 
-            className="px-8 py-6 text-lg min-w-[200px] border-white  hover:bg-white hover:text-black transition-colors"
+            className="w-full sm:w-auto px-8 py-6 text-base sm:text-lg min-w-[200px] border-white text-white hover:bg-white hover:text-black transition-colors"
             asChild
           >
             <Link to="/legal-advisory">Speak to a Lawyer</Link>
@@ -75,8 +79,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Slide Indicators (Optional but recommended for UX) */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      {/* Slide Indicators - Moved up slightly for mobile safe areas */}
+      <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {backgroundImages.map((_, i) => (
           <button
             key={i}
@@ -84,6 +88,7 @@ const HeroSection = () => {
             className={`h-1.5 transition-all duration-500 rounded-full ${
               currentIndex === i ? "w-8 bg-white" : "w-2 bg-white/40"
             }`}
+            aria-label={`Go to slide ${i + 1}`}
           />
         ))}
       </div>
