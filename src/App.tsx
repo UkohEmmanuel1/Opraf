@@ -14,7 +14,7 @@ import Services from "@/pages/Services";
 import Projects from "@/pages/Projects";
 import ProjectDetail from "@/pages/ProjectDetail"; 
 import LegalAdvisory from "@/pages/LegalAdvisory";
-//import Contact from "@/pages/Contact";
+import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,11 +44,11 @@ const App = () => (
           <Route path="/projects/:id" element={<ProjectDetail />} />
           
           
-          {/* 🚨 2. Add this dynamic route for individual articles! */}
+          
           <Route path="/projects/:id" element={<ProjectDetail />} />
           
           <Route path="/legal-advisory" element={<LegalAdvisory />} />
-          {/*<Route path="/contact" element={<Contact />} /> */}
+          <Route path="/contact" element={<Contact />} /> 
           
           <Route path="*" element={<NotFound />} />
         </Routes>
