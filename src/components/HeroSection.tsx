@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 
 // 1. IMPORT the images so Vite knows to bundle them properly
 import heroBg1 from "@/assets/OprafHero.png";
-import heroBg2 from "@/assets/Opraf_2.png";
-import heroBg3 from "@/assets/Opraf_4.png";
+import heroBg2 from "@/assets/Allen_4.jpeg";
+import heroBg3 from "@/assets/Ayilara_3.jpeg";
 
 // 2. Put the imported variables into the array
 const backgroundImages = [
